@@ -20,5 +20,6 @@ yarn-error.log*
 *.sln
 *.sw*
 
-#wip files
+#other files
 to-review.js
+now.json
