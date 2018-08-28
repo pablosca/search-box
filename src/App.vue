@@ -1,17 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <search-box @search="onSearch" />
+    <search-results :results="results" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SearchBox from './components/SearchBox.vue'
+import SearchResults from './components/SearchResults.vue'
 
 export default {
   name: 'app',
+
+  data () {
+    return {
+      results: []
+    };
+  },
+
   components: {
-    HelloWorld
+    SearchBox, SearchResults
+  },
+
+  methods: {
+    onSearch (results) {
+      this.results = results;
+    }
   }
 }
 </script>
@@ -23,6 +37,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  max-width: 1000px;
+  margin: 60px auto;
 }
 </style>
