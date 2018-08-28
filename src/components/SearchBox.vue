@@ -77,7 +77,7 @@ export default {
 
 			this.loading = true;
 
-			axios.get('http://5b84592bdb24a100142dcdf9.mockapi.io/search', { params })
+			axios.get('https://5b84592bdb24a100142dcdf9.mockapi.io/search', { params })
 				.then((response) => {
 					this.$emit('search', response.data.results);
 				})
